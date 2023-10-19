@@ -1,20 +1,26 @@
-import './App.css';
-import { Outlet } from 'react-router-dom';
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import React from "react";
+import { Outlet} from "react-router-dom";
+import { AuthContextProvider } from './context/AuthContext'
+import NavMenu from './components/NavMenu'
+import logo from "/img/logo.png"
 
-const client = new ApolloClient({
-  uri: '/graphql',
-  cache: new InMemoryCache(),
-});
 
-function App() {
-  return (
-    <ApolloProvider client={client}>
-      <div className="flex-column justify-center align-center min-100-vh bg-primary">
+
+
+export default function App() {
+    return(
+     <>
+     <AuthContextProvider>
+     <img src={logo} width={80} height={80}/>
+     < NavMenu /> 
+      <main className="mx-3">
         <Outlet />
-      </div>
-    </ApolloProvider>
-  );
+      </main>
+     </AuthContextProvider>
+     </>
+      
+    )
+
 }
 
-export default App;
+

@@ -11,7 +11,7 @@ export default function Footer(props) {
             rel="noopener noreferrer"
         >
             <img style={{width: "50px", height: "50px"}}
-                src="/img/image.jpg"
+                src="/img/facebook.png"
                 alt="Facebook"
                 className="logo"
             ></img>
